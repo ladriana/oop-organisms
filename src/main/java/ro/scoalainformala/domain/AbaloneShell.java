@@ -1,5 +1,7 @@
 package ro.scoalainformala.domain;
 
+import java.util.Objects;
+
 public class AbaloneShell extends Gastropoda {
     public AbaloneShell(String name, String colour) {
         super(name, colour);
@@ -12,7 +14,7 @@ public class AbaloneShell extends Gastropoda {
 
     @Override
     public String toString() {
-        return "Gastopoda " + getName() +" " + getColour();
+        return "Gastopoda " + getName() + " " + getColour();
     }
 
     @Override
@@ -28,5 +30,10 @@ public class AbaloneShell extends Gastropoda {
             return this.getName().equals(other.getName()) && this.getColour().equals(other.getColour());
         }
         return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getName());
     }
 }

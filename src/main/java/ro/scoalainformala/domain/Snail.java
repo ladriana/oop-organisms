@@ -1,5 +1,7 @@
 package ro.scoalainformala.domain;
 
+import java.util.Objects;
+
 public class Snail extends Gastropoda {
     public Snail(String name, String colour) {
         super(name, colour);
@@ -12,7 +14,7 @@ public class Snail extends Gastropoda {
 
     @Override
     public String toString() {
-        return "Gastopoda " + getName() +" " + getColour();
+        return "Gastopoda " + getName() + " " + getColour();
     }
 
     @Override
@@ -28,6 +30,11 @@ public class Snail extends Gastropoda {
             return this.getName().equals(other.getName()) && this.getColour().equals(other.getColour());
         }
         return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getName());
     }
 }
 
