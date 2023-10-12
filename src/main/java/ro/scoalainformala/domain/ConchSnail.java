@@ -7,6 +7,26 @@ public class ConchSnail extends Gastropoda {
 
     @Override
     public String makeMotherOfPearls() {
-        return "The color can range from white to pink, also occurring in brown and orange tones!";
+        return "Mother of pearl can range from white to pink, also occurring in brown and orange tones!";
+    }
+
+    @Override
+    public String toString() {
+        return "Gastopoda " + getName() +" " + getColour();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (obj instanceof ConchSnail) {
+            ConchSnail other = (ConchSnail) obj;
+            return this.getName().equals(other.getName()) && this.getColour().equals(other.getColour());
+        }
+        return false;
     }
 }
